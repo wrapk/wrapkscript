@@ -19,8 +19,8 @@
 /* Selector for entire element. */
 .cse .gsc-control-cse,
 .gsc-control-cse {
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
+  background-color: #000;
+  border: 1px solid #000;
 }
 .cse .gsc-control-cse:after,
 .gsc-control-cse:after {
