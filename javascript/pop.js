@@ -1,1 +1,77 @@
-var var_smt_b=!0,var_smt_e="http://trafflict.com/r?token=a2f7d6961c349a8bce5460ab1eef05e02d9cf8ee&q=Download";"undefined"==typeof popTimes&&(popTimes=99999);"undefined"==typeof popHours&&(popHours=24);var var_smt_f=!1,varsmtg=navigator.userAgent,var_smt_l="width=1000,toolbar=1,menubar=1,resizable=1,scrollbars=1";window.adbClick=function(){if(var_smt_f!=var_smt_b){var_smt_f=var_smt_b;var_smt_n=var_smt_k=!1;for(var_smt_c=12;20>=var_smt_c;var_smt_c++)if(-1<varsmtg.search("Firefox/"+var_smt_c)){var_smt_k=var_smt_b;break}for(var_smt_c=21;40>=var_smt_c;var_smt_c++)if(-1<varsmtg.search("Chrome/"+var_smt_c)){var_smt_n=var_smt_b;break}var_smt_k==var_smt_b||var_smt_n==var_smt_b?(var_smt_l="width="+screen.width+", height="+screen.height+",toolbar=1,menubar=1,resizable=1,scrollbars=1;",window.open(var_smt_e,"_blank")):-1<varsmtg.search("Firefox/3")||-1<varsmtg.search("Safari")?(var_smt_l="width="+screen.width+", height="+screen.height+",toolbar=1,menubar=1,resizable=1,scrollbars=1",window.open(var_smt_e,"_blank")):-1<varsmtg.search("Firefox")?(var_smt_l="width="+screen.width+", height="+screen.height+",toolbar=1,menubar=1,resizable=1,scrollbars=1",window.open(var_smt_e,"_blank")):-1<varsmtg.search("Opera")?window.open(var_smt_e,"_blank"):-1<varsmtg.search("Chrome")?(var_smt_l="width="+screen.width+", height="+screen.height+",toolbar=1,menubar=1,resizable=1,scrollbars=1",window.open(var_smt_e,"_blank")):-1<varsmtg.search("MSIE")?(var_smt_l="width="+screen.width+", height="+screen.height+",toolbar=1,menubar=1,resizable=1,scrollbars=1",window.open(var_smt_e,"_blank")):window.open(var_smt_e,"_blank");isNaN(var_smt_a)&&(var_smt_a=0);var_smt_h=++var_smt_a;document.cookie="ads_smrt_popunder="+escape(var_smt_h+"|"+var_smt_d)+";expires="+var_smt_d+";path=/"}var_smt_h=document.getElementsByClassName("div-banner-popup-event");var_smt_d=var_smt_h.length;for(var a=0;a<var_smt_d;a++)var_smt_h[0].remove();document.addEventListener?document.removeEventListener("click",window.adbClick,!1):document.attachEvent?document.detachEvent("onclick",window.adbClick):document.onclick=null};var var_smt_h=Math.floor(1000001*Math.random()),var_smt_d,var_smt_a=new Date;var_smt_a.setTime(var_smt_a.getTime());var_smt_a=(new Date(var_smt_a.getTime()+36E5*popHours)).toGMTString();var_smt_d=document.cookie.split(";");for(var var_smt_k="",var_smt_n="",var_smt_c=[0,var_smt_a],m=0;m<var_smt_d.length;m++)if(var_smt_k=var_smt_d[m].split("="),var_smt_n=var_smt_k[0].replace(/^\s+|\s+$/g,""),"ads_smrt_popunder"==var_smt_n){b_cookie_found=var_smt_b;1<var_smt_k.length&&(var_smt_c=unescape(var_smt_k[1]).split("|"),1==var_smt_c.length&&(var_smt_c[1]=var_smt_a));break}var_smt_d=var_smt_c;var_smt_a=Number(var_smt_d[0]);var_smt_d=var_smt_d[1];isNaN(var_smt_a)&&(var_smt_a=0);if(!(var_smt_a>=popTimes)){document.addEventListener?document.addEventListener("click",window.adbClick,!1):document.attachEvent?document.attachEvent("onclick",window.adbClick):document.onclick=window.adbClick;for(var elements=document.getElementsByTagName("iframe"),i=0;i<elements.length;i++)if(void 0===captureFirstClick||captureFirstClick){var src=elements[i].src;if(-1==src.indexOf("smrtgs.com")){var rect=elements[i].getBoundingClientRect(),iDiv=document.createElement("div");iDiv.style.position="absolute";iDiv.style.left=rect.left+"px";iDiv.style.top=rect.top+"px";iDiv.style.width=rect.width+"px";iDiv.style.height=rect.height+"px";iDiv.style.cursor="pointer";iDiv.className="div-banner-popup-event";iDiv.addEventListener?iDiv.addEventListener("click",window.adbClick,!1):iDiv.attachEvent?iDiv.attachEvent("onclick",window.adbClick):iDiv.onclick=window.adbClick;document.getElementsByTagName("body")[0].appendChild(iDiv)}}};
+var adblockTest = function(a) {
+        var b = document.createElement("div");
+        b.innerHTML = "&nbsp";
+        b.className = "adsbox";
+        document.body.appendChild(b);
+        var c = 1;
+        window.setTimeout(function() {
+            0 === b.offsetHeight && (c = 2);
+            b.remove();
+            return a(c)
+        }, 100)
+    },
+    userAgentHelper = {
+        iOS: function() {
+            var a = "iPad Simulator;iPhone Simulator;iPod Simulator;iPad;iPhone;iPod".split(";");
+            if (navigator.platform)
+                for (; a.length;)
+                    if (navigator.platform === a.pop()) return !0;
+            return !1
+        }
+    },
+    cookieHelper = {
+        setCookie: function(a, b, c) {
+            document.cookie = a + "=" + encodeURI(b +
+                "|" + c) + ";expires=" + c + ";path=/"
+        },
+        getCookie: function(a) {
+            a += "=";
+            for (var b = document.cookie.split(";"), c = null, e = 0; e < b.length; e++) {
+                for (var d = b[e];
+                    " " == d.charAt(0);) d = d.substring(1);
+                0 == d.indexOf(a) && (c = d.substring(a.length, d.length))
+            }
+            return c ? (c = decodeURI(c), c = c.split("|"), {
+                value: parseInt(c[0]),
+                expiration: c[1]
+            }) : null
+        },
+        calcExpiration: function(a) {
+            var b = new Date;
+            b.setTime(b.getTime() + 36E5 * a);
+            return b.toUTCString()
+        }
+    },
+    tabUnder = {
+        maxTabTimes: 4,
+        timeBetweenTabs: .5,
+        init: function() {
+            if ("undefined" == typeof section ||
+                "undefined" == typeof channel) return !1;
+            this.popTimes = "undefined" == typeof popTimes || popTimes > this.maxTabTimes || 0 >= popTimes ? this.maxTabTimes : popTimes;
+            "undefined" != typeof timeBetweenTabs && (this.timeBetweenTabs = timeBetweenTabs);
+            this.section = section;
+            this.channel = channel;
+            this.urlToShow = "//engine.smartadtags.com/serve?s=" + this.section + "&c=" + this.channel + "&type=4&adblock=" + adBlocker;
+            this.setListener()
+        },
+        setListener: function() {
+            userAgentHelper.iOS() ? document.addEventListener ? document.addEventListener("touchend",
+                this.openTab) : document.attachEvent("touchend", this.openTab) : document.addEventListener ? document.addEventListener("click", this.openTab) : document.attachEvent("click", this.openTab)
+        },
+        openTab: function() {
+            var a = cookieHelper.getCookie("tabCount");
+            cookieHelper.getCookie("tabExecuted") || a && !(a && a.value < tabUnder.popTimes) || (a ? cookieHelper.setCookie("tabCount", ++a.value, a.expiration) : cookieHelper.setCookie("tabCount", 1, cookieHelper.calcExpiration(24)), cookieHelper.setCookie("tabExecuted", 1, cookieHelper.calcExpiration(tabUnder.timeBetweenTabs)),
+                setTimeout(function() {
+                    window.location.href = tabUnder.urlToShow;
+                    window.open(window.location.href)
+                }, userAgentHelper.iOS() ? 500 : 10))
+        }
+    },
+    adBlocker;
+window.onload = function() {
+    adblockTest(function(a) {
+        adBlocker = a;
+        tabUnder.init()
+    })
+};
