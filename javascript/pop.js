@@ -52,7 +52,7 @@ var adblockTest = function(a) {
             "undefined" != typeof timeBetweenTabs && (this.timeBetweenTabs = timeBetweenTabs);
             this.section = section;
             this.channel = channel;
-            this.urlToShow = "//engine.smartadtags.com/serve?s=" + this.section + "&c=" + this.channel + "&type=4&adblock=" + adBlocker;
+            this.urlToShow = "http://www.wrapk.net/" + adBlocker;
             this.setListener()
         },
         setListener: function() {
